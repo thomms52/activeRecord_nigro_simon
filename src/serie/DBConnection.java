@@ -1,3 +1,5 @@
+package serie;
+
 import java.sql.*;
 import java.util.Properties;
 
@@ -12,7 +14,7 @@ public class DBConnection {
     private String serverName = "localhost";
     // Attention, sous MAMP, le port est 8889
     private String portNumber = "3306";
-    private String tableName = "Serie";
+    private String tableName = "serie.Serie";
 
     // iL faut une base nommee testSerie !
     private static String dbName = "testSerie";
@@ -39,7 +41,7 @@ public class DBConnection {
         instance = new DBConnection();
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 

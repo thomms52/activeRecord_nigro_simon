@@ -1,3 +1,5 @@
+package serie;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,7 +20,7 @@ public class PrincipaleJDBC {
 		String serverName = "localhost";
 		//Attention, sous MAMP, le port est 8889
 		String portNumber = "3306";
-		String tableName = "Serie";
+		String tableName = "serie.Serie";
 
 		// iL faut une base nommee testSerie !
 		String dbName = "testSerie";
@@ -31,13 +33,13 @@ public class PrincipaleJDBC {
 		urlDB += portNumber + "/" + dbName;
 		Connection connect = DriverManager.getConnection(urlDB, connectionProps);
 
-		// creation de la table Serie
+		// creation de la table serie.Serie
 		{
-			String createString = "CREATE TABLE Serie ( " + "ID INTEGER  AUTO_INCREMENT, "
+			String createString = "CREATE TABLE serie.Serie ( " + "ID INTEGER  AUTO_INCREMENT, "
 					+ "NOM varchar(40) NOT NULL, " + "GENRE varchar(40) NOT NULL, " + "PRIMARY KEY (ID))";
 			Statement stmt = connect.createStatement();
 			//stmt.executeUpdate(createString);
-			//System.out.println("1) creation table Serie\n");
+			//System.out.println("1) creation table serie.Serie\n");
 		}
 
 		// ajout de serie avec requete preparee
@@ -76,7 +78,7 @@ public class PrincipaleJDBC {
 
 		// recuperation de toutes les series + affichage
 		{
-			System.out.println("4) Recupere les series de la table Serie");
+			System.out.println("4) Recupere les series de la table serie.Serie");
 			String SQLPrep = "SELECT * FROM Serie;";
 			PreparedStatement prep1 = connect.prepareStatement(SQLPrep);
 			prep1.execute();
@@ -126,13 +128,13 @@ public class PrincipaleJDBC {
 			prep.setString(2, "Science-Fiction-Bizarre");
 			prep.setInt(3, 2);
 			prep.execute();
-			System.out.println("7) Effectue modification Serie id 2");
+			System.out.println("7) Effectue modification serie.Serie id 2");
 			System.out.println();
 		}
 
 		// recuperation de la seconde serie + affichage
 		{
-			System.out.println("8) Affiche Serie id 2 apres modification");
+			System.out.println("8) Affiche serie.Serie id 2 apres modification");
 			String SQLPrep = "SELECT * FROM Serie WHERE id=?;";
 			PreparedStatement prep1 = connect.prepareStatement(SQLPrep);
 			prep1.setInt(1, 2);
@@ -153,7 +155,7 @@ public class PrincipaleJDBC {
 			String drop = "DROP TABLE Serie";
 			Statement stmt = connect.createStatement();
 			stmt.executeUpdate(drop);
-			System.out.println("9) Supprime table Serie");
+			System.out.println("9) Supprime table serie.Serie");
 		}
 
 	}

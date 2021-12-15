@@ -1,4 +1,8 @@
+package testEtu;
+
 import org.junit.*;
+import serie.Serie;
+
 import java.sql.SQLException;
 import java.util.List;
 
