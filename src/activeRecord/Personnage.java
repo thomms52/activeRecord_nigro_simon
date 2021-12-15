@@ -1,4 +1,4 @@
-package serie;
+package activeRecord;
 
 import java.sql.SQLException;
 import java.sql.*;

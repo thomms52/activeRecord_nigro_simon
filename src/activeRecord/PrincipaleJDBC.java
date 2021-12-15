@@ -1,4 +1,4 @@
-package serie;
+package activeRecord;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

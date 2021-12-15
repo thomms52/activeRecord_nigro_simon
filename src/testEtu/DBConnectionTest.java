@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import java.sql.*;
 
 import org.junit.Test;
-import serie.DBConnection;
+import activeRecord.DBConnection;
 
 public class DBConnectionTest {
 

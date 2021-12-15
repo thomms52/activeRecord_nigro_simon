@@ -1,4 +1,4 @@
-package serie;
+package activeRecord;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -159,7 +159,7 @@ public class Serie {
         prep.execute();
     }
 
-    private void delete() throws SQLException {
+    public void delete() throws SQLException {
         Connection connect = DBConnection.getInstance().getConnection();
         PreparedStatement prep = connect.prepareStatement("DELETE FROM Serie WHERE id=?");
         prep.setInt(1, this.id);

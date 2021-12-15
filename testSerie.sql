@@ -53,7 +53,7 @@ INSERT INTO `personnage` (`ID`, `NOM`, `ID_SERIE`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `serie`
+-- Structure de la table `activeRecord`
 --
 
 CREATE TABLE `serie` (
@@ -63,7 +63,7 @@ CREATE TABLE `serie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `serie`
+-- Contenu de la table `activeRecord`
 --
 
 INSERT INTO `serie` (`ID`, `NOM`, `GENRE`) VALUES
@@ -85,7 +85,7 @@ ALTER TABLE `personnage`
   ADD KEY `ID_SERIE` (`ID_SERIE`);
 
 --
--- Index pour la table `serie`
+-- Index pour la table `activeRecord`
 --
 ALTER TABLE `serie`
   ADD PRIMARY KEY (`ID`);
@@ -100,7 +100,7 @@ ALTER TABLE `serie`
 ALTER TABLE `personnage`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT pour la table `serie`
+-- AUTO_INCREMENT pour la table `activeRecord`
 --
 ALTER TABLE `serie`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
